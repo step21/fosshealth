@@ -2,6 +2,8 @@
 
 ## Metrics
 
+* sentiment analysis of issues / issue comments
+
 ### Existing Projects
 * CHAOSS [https://metrix.chaoss.io/](https://metrix.chaoss.io/) [https://ai.chaoss.io/repos/views/repo/1](https://ai.chaoss.io/repos/views/repo/1)
 * red-flags
