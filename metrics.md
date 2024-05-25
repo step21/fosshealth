@@ -107,8 +107,8 @@ all data has as reference point a repository on a source code forge
 }
 ```
 
-
-*  
+# OSSF Security Scorecard
+* get scorecard results - api_url /projects/{platform}/{org}/{repo} such as https://api.securityscorecards.dev/projects/github.com/ethereum/eth-keyfile
 
 # red-flag-score
 * => 
