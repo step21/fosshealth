@@ -10,6 +10,12 @@ Project data is scrapped from Git repositories and curated into a table for easy
 
 ## Technology Involved
 - Github
+- Nestjs Framework (nodejs)
+- TypeORM
+- Postgres DB
+- HTML / CSS
+- EJS
+- Flask (python)
 
 
 ## Datasource's Involved
@@ -17,6 +23,8 @@ Project data is scrapped from Git repositories and curated into a table for easy
 - https://opensauced.pizza API
 - https://github.com/ossf/scorecard CLI-Tool
 - https://github.com/chaoss/augur
+
+## Frontend 
 
 to run it:
 ```
