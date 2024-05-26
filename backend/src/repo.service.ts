@@ -21,6 +21,7 @@ export class RepoService {
       stars: item?.githubRepo.stargazers_count,
       watcher: item?.githubRepo.subscribers_count,
       issues: item?.githubRepo.open_issues_count,
+      releaseCount: item.releaseCount,
     }));
   }
 
