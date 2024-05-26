@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SVG map styles */
+.svgMap-map-wrapper {
+  @apply bg-white !important;
+}
+
+.svgMap-map-image {
+  @apply dark:bg-gray-800;
+}
+
+.svgMap-map-controls-wrapper {
+  @apply shadow-none left-0 bottom-0 dark:bg-gray-800 !important;
+}
+
+.svgMap-map-controls-zoom {
+  @apply dark:bg-gray-800 !important;
+}
+
+.svgMap-map-wrapper .svgMap-control-button  {
+  @apply rounded-lg border-solid border border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600 !important;
+}
+
+.svgMap-map-wrapper .svgMap-control-button.svgMap-zoom-button:after,
+.svgMap-map-wrapper .svgMap-control-button.svgMap-zoom-button:before {
+  @apply dark:bg-gray-600 dark:hover:bg-gray-500;
+}
+
+.svgMap-map-wrapper .svgMap-control-button:first-child {
+  @apply mr-2 !important;
+}
+
+.svgMap-tooltip {
+  @apply bg-white dark:bg-gray-700 shadow-lg rounded-lg border-0 text-left !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-flag-container {
+  @apply inline-block mr-2 text-left border-0 p-0 !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-flag-container .svgMap-tooltip-flag {
+  @apply inline-block border-0 h-4 p-0 !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-title {
+  @apply inline-block pt-2 text-gray-900 dark:text-white font-semibold text-sm !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-content {
+  @apply mt-0 !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-content table td {
+  @apply text-sm text-left text-gray-500 dark:text-gray-400 font-normal !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-content table td span {
+  @apply text-sm text-left text-gray-900 dark:text-white font-semibold !important;
+}
+
+.svgMap-tooltip .svgMap-tooltip-pointer {
+  @apply hidden !important;
+}
+
+.svgMap-map-wrapper .svgMap-country {
+  @apply dark:stroke-gray-800;
+}
+
+@media (min-width: 1280px) {
+  .feed-container {
+    height: calc(100vh - 4rem);
+  }
+}
+
+.tab-active {
+    font-size: 1rem; /* or any desired size */
+    font-weight: bold;
+    color: #1a202c; /* darker color */
+}
+
+.tab-active a {
+    color: #1a202c; /* ensure link color is also dark */
+}

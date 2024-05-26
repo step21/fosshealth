@@ -1,0 +1,18 @@
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="/app.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/datepicker.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const tabs = document.querySelectorAll('th[data-section]');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove the active class from all tabs
+                tabs.forEach(t => t.classList.remove('tab-active'));
+                
+                // Add the active class to the clicked tab
+                tab.classList.add('tab-active');
+            });
+        });
+    });
+</script>
