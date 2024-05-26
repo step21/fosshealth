@@ -22,6 +22,7 @@ export class RepoService {
       watcher: item?.githubRepo.subscribers_count,
       issues: item?.githubRepo.open_issues_count,
       releaseCount: item.releaseCount,
+      pulls: item.opensaucedData?.open_prs_count,
     }));
   }
 
