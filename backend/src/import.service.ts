@@ -1,13 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, LoggerService } from '@nestjs/common';
 import { FetchService } from './fetch.service';
 import { RepoService } from './repo.service';
 import { GithubService } from './github.service';
 import { OpensaucedService } from './opensauced.service';
 import { ScorecardService } from './scorecard.service';
-
-interface GithubRepo {
-  full_name: string;
-}
 
 @Injectable()
 export class ImportService {
@@ -17,11 +13,17 @@ export class ImportService {
     private githubService: GithubService,
     private opensaucedService: OpensaucedService,
     private scorecardService: ScorecardService,
+    private logger: LoggerService,
   ) {}
 
   async importAll(): Promise<any> {
     const repos = this.fetchService.getItemsToImport();
     for (const repo of repos) {
+      const dbRepo = await this.repo.getOne(repo.full_name);
+      if (dbRepo) {
+        this.logger.debug('skip', repo.full_name);
+        continue;
+      }
       const repoData = await this.githubService.getRepo(repo.full_name);
       const releaseCount = await this.githubService.getReleaseCount(
         repo.full_name,

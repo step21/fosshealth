@@ -14,6 +14,10 @@ export class RepoService {
     return this.usersRepository.find();
   }
 
+  async getOne(name: string): Promise<any> {
+    return this.usersRepository.findOneBy({ name });
+  }
+
   async findAllMapped() {
     const items = await this.findAll();
     return items.map((item) => ({
