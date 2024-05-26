@@ -13,8 +13,7 @@ app
 app.get("/", (req, res) => {
   const datas = require("./data/data.json");
   res.render("index", {
-    layout: path.join(__dirname, "/layouts/dashboard"),
-    footer: true,
+    layout: path.join(__dirname, "/layouts/main"),
     datas
   });
 });
