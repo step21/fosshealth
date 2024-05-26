@@ -13,7 +13,6 @@ export class ImportService {
     private githubService: GithubService,
     private opensaucedService: OpensaucedService,
     private scorecardService: ScorecardService,
-    private logger: LoggerService,
   ) {}
 
   async importAll(): Promise<any> {
@@ -21,7 +20,7 @@ export class ImportService {
     for (const repo of repos) {
       const dbRepo = await this.repo.getOne(repo.full_name);
       if (dbRepo) {
-        this.logger.debug('skip', repo.full_name);
+        console.log('skip', repo.full_name);
         continue;
       }
       const repoData = await this.githubService.getRepo(repo.full_name);

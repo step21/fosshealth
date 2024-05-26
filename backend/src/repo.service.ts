@@ -22,11 +22,13 @@ export class RepoService {
     const items = await this.findAll();
     return items.map((item) => ({
       name: item.name,
-      stars: item?.githubRepo.stargazers_count,
-      watcher: item?.githubRepo.subscribers_count,
-      issues: item?.githubRepo.open_issues_count,
+      stars: item.githubRepo?.stargazers_count,
+      watcher: item.githubRepo?.subscribers_count,
+      issues: item.githubRepo?.open_issues_count,
       releaseCount: item.releaseCount,
       pulls: item.opensaucedData?.open_prs_count,
+      repoLastPushedAt: item?.githubRepo?.pushed_at,
+      repoCreatedAt: item.githubRepo?.created_at,
     }));
   }
 
