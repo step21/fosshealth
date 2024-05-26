@@ -1,11 +1,18 @@
-from flask import Flask
+from flask import Flask, request, jsonify
+from db_utils import *
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return 'Hello from Flask!'
+    return 'Hello from fosssearch'
+
+@app.route('/api/{repo_id}/')
+def repo_id():
+    d = select_query(conn, f"SELECT * FROM repo_metadata WHERE id = {repo_id}")
+    return jsonify(d)
+    
 
 @app.route('/api/leaderboard')
 def api_data():
