@@ -1,3 +1,5 @@
+FROM gcr.io/openssf/scorecard:stable as TEMP
+
 # Base image
 FROM node:20-alpine3.20
 
@@ -15,6 +17,8 @@ COPY . .
 
 # Creates a "dist" folder with the production build
 RUN npm run build
+
+COPY --from=TEMP /scorecard /usr/src/app/dist/scorecard
 
 # Start the server using the production build
 CMD [ "node", "dist/main.js" ]

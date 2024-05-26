@@ -6,8 +6,9 @@ import { FetchService } from './fetch.service';
 import { RepoService } from './repo.service';
 import { ImportService } from './import.service';
 import { GithubService } from './github.service';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { OpensaucedService } from './opensauced.service';
+import { ScorecardService } from './scorecard.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Repo]), ConfigModule.forRoot()],
@@ -17,6 +18,7 @@ import { OpensaucedService } from './opensauced.service';
     ImportService,
     GithubService,
     OpensaucedService,
+    ScorecardService,
   ],
   controllers: [RepoController],
 })
