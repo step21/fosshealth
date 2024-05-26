@@ -10,7 +10,13 @@ Project data is scrapped from Git repositories and curated into a table for easy
 
 ## Technology Involved
 - Github
-- 
+
+
+## Datasource's Involved
+- Github API
+- https://opensauced.pizza API
+- https://github.com/ossf/scorecard CLI-Tool
+- https://github.com/chaoss/augur
 
 to run it:
 ```
