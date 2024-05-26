@@ -37,3 +37,24 @@ port:
 ```
 localhost:3003
 ```
+
+## Backend Nodejs
+
+Scraped Repos with basic data: 
+
+https://fosshealth.onrender.com/repo
+
+Full dataset:
+
+https://fosshealth.onrender.com/repo/raw
+
+to run it:
+
+```
+cp .env.example .env
+```
+and fill values
+
+```
+docker compose up
+```
