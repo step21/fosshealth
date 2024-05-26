@@ -12,8 +12,13 @@ import { RepoModule } from './repo.module';
     TypeOrmModule.forRootAsync({
       useFactory: (config: ConfigService) => {
         return {
-          type: 'sqlite',
-          database: './db',
+          type: 'postgres',
+          host: config.getOrThrow('DB_HOST'),
+          port: 5432,
+          username: 'db_9dwk_user',
+          password: config.getOrThrow('DB_PW'),
+          database: 'db_9dwk',
+          ssl: true,
           entities: [Repo],
           synchronize: true,
         };
