@@ -17,7 +17,7 @@ for record in data:
   number_records += 1
   print(f""">>> {number_records} of {len(data)} records processed""")
   qr = f"""INSERT INTO repo_metadata (id, owner, repo_name, repo_stars, repo_forks, repo_watchers, is_fork, is_archived, languages, language_count, topics, topic_count, disk_usage_kb, pull_requests, issues, description, primary_language, created_at, pushed_at, default_branch_commit_count, assignable_user_count, code_of_conduct, forking_allowed, name_and_owner, parent) VALUES {record['owner']}', '{record['repo_name']}', {record['repo_stars']}, {record['repo_forks']}, {record['repo_watchers']}, {record['is_fork']}, {record['is_archived']}, '{record['languages']}', {record['language_count']}, '{record['topics']}', {record['topic_count']}, {record['disk_usage_kb']}, {record['pull_requests']}, {record['issues']}, '{record['description']}', '{record['primary_language']}', '{record['created_at']}', '{record['pushed_at']}', {record['default_branch_commit_count']}, '{record['assignable_user_count']}', '{record['code_of_conduct']}', {record['forking_allowed']}, '{record['name_and_owner']}', '{record['parent']}')"""
-execute_query(conn, q)
+execute_query(conn, qr)
   
 # close the database connection
 conn.close()
